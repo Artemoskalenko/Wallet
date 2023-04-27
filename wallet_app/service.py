@@ -10,6 +10,7 @@ def currency_update_or_create(code, value):
     print("currency_update_or_create")
     try:
         cur = Currency.objects.get(code=code)
+        print(f'{cur.code} - {cur.convertion_rate}')
         cur.convertion_rate = Decimal(value)
         cur.save()
         print(f'{code} - {value}')
@@ -18,7 +19,7 @@ def currency_update_or_create(code, value):
         new_cur = Currency(name=code, code=code, convertion_rate=value)
         new_cur.save()
     except Exception as e:
-        print(e)
+        print(f"exception --- {e}")
 
 
 def currency_update():

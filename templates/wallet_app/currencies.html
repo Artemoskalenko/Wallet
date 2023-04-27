@@ -1,0 +1,13 @@
+{% extends 'wallet_app/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+{% for currency in object_list  %}
+<h1>{{ currency.code }} --- {{ currency.convertion_rate }}</h1>
+{% endfor %}
+
+
+{% endblock content %}

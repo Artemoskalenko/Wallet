@@ -14,9 +14,15 @@ services:
     ports:
       - "8000:8000"
     command: ["python3", "./app/manage.py", "runserver", "0.0.0.0:8000"]
+    links:
+      - redis
+    depends_on:
+      - redis
 
   worker:
     restart: always
     build:
       context: .
-    command: ['celery', '--workdir=./app', '-A', 'config', 'worker']
+    command: ['celery', '--workdir=./app', '-A', 'config', 'worker', '--loglevel=INFO']
+    links:
+      - redis

@@ -1,0 +1,14 @@
+{% extends 'wallet_app/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+{% for wallet in object_list  %}
+<!--<h1>{{ wallet.name }}</h1>-->
+<button type="button" class="btn btn-primary btn-lg" style="width:266px;font-size: 14px;text-align: left;height:56px;position:relative"><i class="fa-solid fa-coins fa-2xl" style="display:inline-block;margin-bottom:auto;position: absolute;top: 50%;"></i><div style="display:inline-block;margin-left:40px">{{ wallet.name }}<br>{{ wallet.balance }} {{ wallet.currency }}</div></button>
+{% endfor %}
+<button type="button" class="btn btn-outline-secondary" style="width:266px;font-size: 14px;text-align: left;height:56px;position:relative"><div style="display:block;text-align:center">+ Add account</div></button>
+
+{% endblock content %}
