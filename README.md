@@ -1,6 +1,6 @@
 # WALLET Django website
 
-
+Ща как всьо заруїню гигигиги
 ## TECHNOLOGY STACK
 
 ● Python 3
