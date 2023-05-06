@@ -77,6 +77,7 @@
   .balance{
     margin-top: 4px;
     color: white;
+    text-align: start;
   }
   .account-edit{
     position: absolute;
