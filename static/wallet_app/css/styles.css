@@ -1,0 +1,118 @@
+@import url(accounts-page-1.css);
+@import url(backdrop.css);
+@import url(common.css);
+@import url(header.css);
+@import url(modal-account.css);
+@import url(statisticks.css);
+@import url(accounts-page-2.css);
+@import url(color-picker.css);
+@import url(type-picker.css);
+
+@import url(simulation.css);
+
+/* .box-3 *{
+  border: 1px dotted red;
+} */
+
+
+/* Hide the increment and decrement buttons */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  /* Firefox */
+  -moz-appearance: textfield;
+}
+
+
+/* test-2 */
+form input{
+  height: 50px;
+}
+
+.container-23{
+  margin-top: 100px;
+  width: 500px;
+
+}
+#myList {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+}
+
+#myList li {
+  margin-right: 10px;
+}
+.btn-gpt-test{
+  width: 150px;
+  height: 50px;
+  margin-bottom: 50px;
+}
+
+
+/* !!!!!!!!!!!!!!!!!!!!! */
+.select {
+  position: relative;
+  /* display: inline-block; */
+}
+
+.select-btn {
+  display: block;
+  /* position: relative; */
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  text-align: left;
+  cursor: pointer;
+}
+
+.caret-dropdown{
+  position: absolute;
+  top: 0;
+  right: 20px;
+}
+
+.select-dropdown,
+.select-currency-dropdown {
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  left: 0;
+  z-index: 111;
+  display: none;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.select-currency-dropdown{
+  width: 115px;
+  height: 40px;
+  margin-top: 8px;
+}
+
+.select-dropdown li{
+  height: 40px;
+}
+
+.select-dropdown button {
+  display: block;
+  width: 100%;
+  /* height: 100%; */
+  padding: 10px;
+  border: none;
+  background-color: #fff;
+  text-align: left;
+  cursor: pointer;
+}
+
+.select-dropdown button:hover {
+  background-color: #f1f1f1;
+}

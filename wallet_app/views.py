@@ -9,7 +9,7 @@ from .service import currency_update
 
 class MainPage(ListView):
     model = Wallet
-    template_name = "wallet_app/main_page.html"
+    template_name = "wallet_app/index.html"
 
     def get_queryset(self):
         return Wallet.objects.filter(user=self.request.user)
