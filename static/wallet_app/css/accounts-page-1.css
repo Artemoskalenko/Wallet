@@ -71,8 +71,13 @@
   }
   .name-custom{
     text-align: start;
+    /* max-width: 100px; */
     font-size: 17px;
     color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
   }
   .balance{
     margin-top: 4px;
