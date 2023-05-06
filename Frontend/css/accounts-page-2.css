@@ -1,0 +1,50 @@
+
+.accounts-test .container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.page-2-sort{
+  width: 80px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.x-123{
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.accounts-side{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+
+    width: 300px;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    background-color: aliceblue;
+}
+.accounts-main{
+    margin-left: 20px;
+    width: 100%;
+}
+.accounts-side button,
+.accounts-side input{
+    width: 80%;
+    align-self: center;
+}
+#search-results {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #search-results li {
+    margin-bottom: 10px;
+  }
+
+  .accounts-combined{
+    display: flex;
+    width: 100%;
+  }

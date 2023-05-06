@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.ico" />
+
+    <title>Wallet</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arvo&family=Roboto:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css"
+    />
+
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <nav class="header-navigation">
+          <a class="logo" href="./index.html"
+            ><svg class="svg-logo">
+              <use href="./svg-sprite/symbol-defs.svg#icon-wallet"></use></svg></a>
+
+          <ul class="header-list">
+            <li>
+              <a class="header-list-item current" href="./index.html"
+                >Dashbourd</a
+              >
+            </li>
+            <li>
+              <a class="header-list-item" href="./accounts.html">Accounts</a>
+            </li>
+            <li>
+              <a class="header-list-item" href="">Records</a>
+            </li>
+            <li>
+              <a class="header-list-item" href="">Analytics</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="profile-buttons">
+          <button type="button" class="record" data-modal-open>+ Record</button>
+          <button id="dropdown-btn" class="profile">Profile</button>
+
+          <div id="dropdown-menu" class="profile-menu">
+            <a href="#" class="profile-settings-link">
+              <svg class="svg">
+                <use href="./svg-sprite/symbol-defs.svg#icon-ticket"></use>
+              </svg>
+              <p>Add Voucher</p>
+            </a>
+            <a href="#" class="profile-settings-link">
+              <svg class="svg">
+                <use href="./svg-sprite/symbol-defs.svg#icon-star-full"></use>
+              </svg>
+              <p>Upgrade</p>
+            </a>
+            <a href="#" class="profile-settings-link">
+              <svg class="svg">
+                <use href="./svg-sprite/symbol-defs.svg#icon-equalizer"></use>
+              </svg>
+              <p>Settings</p>
+            </a>
+            <a href="#" class="profile-settings-link">
+              <svg class="svg">
+                <use href="./svg-sprite/symbol-defs.svg#icon-question"></use>
+              </svg>
+              <p>Help</p>
+            </a>
+            <a href="#" class="profile-settings-link">
+              <svg class="svg">
+                <use href="./svg-sprite/symbol-defs.svg#icon-enter"></use>
+              </svg>
+              <p>Log Out</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Modal +Record -->
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal" id="modal-add-record">
+        <button data-modal-close class="close-modal">
+          <svg class="modal-close-icon">
+            <use href="./svg-sprite/symbol-defs.svg#icon-cross"></use>
+          </svg>
+        </button>
+        <form id="myForm">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" />
+
+          <!-- Other form elements here -->
+        </form>
+      </div>
+    </div>
+
+    <!-- Modal +Account -->
+    <div class="backdrop-account is-hidden" data-modal-account>
+      <div class="modal-account" id="modal-add-account">
+        <button data-modal-account-close class="close-modal-account">
+          <svg class="modal-account-close-icon">
+            <use href="./svg-sprite/symbol-defs.svg#icon-cross"></use>
+          </svg>
+        </button>
+        <div class="xxx">
+          <div class="account-add-select">
+            <h3>ADD ACCOUNT</h3>
+          </div>
+  
+          <form class="type-88">
+            <div class="box-1">
+              <div class="box-2">
+                <p class="input-tag">Name</p>
+                <input type="name" id="name-99" placeholder="Account name" required/>
+              </div>
+              <div class="box-3">
+                <p class="input-tag">Color</p>
+                <button type="button" id="x-11">
+                  <div id="color-example"></div>
+                  <i id="caret-down" class="fa-solid fa-caret-down fa-2xs"></i>
+                </button>
+  
+                <div class="color-picker" id="color-picker-dropdown">
+                  <div class="radio-option">
+                    <label class="container-op">
+                      <input
+                        type="radio"
+                        checked="checked"
+                        name="color"
+                        value="#26c6da"
+                      />
+                      <span class="checkmark op-blue-1"></span>
+                    </label>
+                  </div>
+  
+                  <div class="radio-option">
+                    <label class="container-op">
+                      <input
+                        type="radio"
+                        checked="checked"
+                        name="color"
+                        value="#0097a7"
+                      />
+                      <span class="checkmark op-blue-2"></span>
+                    </label>
+                  </div>
+  
+                  <div class="radio-option">
+                    <label class="container-op">
+                      <input
+                        type="radio"
+                        checked="checked"
+                        name="color"
+                        value="#1565c0"
+                      />
+                      <span class="checkmark op-blue-3"></span>
+                    </label>
+                  </div>
+  
+                  <div class="radio-option">
+                    <label class="container-op">
+                      <input
+                        type="radio"
+                        checked="checked"
+                        name="color"
+                        value="#039be5"
+                      />
+                      <span class="checkmark op-blue-4"></span>
+                    </label>
+                  </div>
+  
+                  <div class="radio-option">
+                    <label class="container-op">
+                      <input
+                        type="radio"
+                        checked="checked"
+                        name="color"
+                        value="#ff1744"
+                      />
+                      <span class="checkmark op-red-1"></span>
+                    </label>
+                  </div>
+  
+                  <div class="radio-option">
+                    <label class="container-op">
+                      <input
+                        type="radio"
+                        checked="checked"
+                        name="color"
+                        value="#ec407a"
+                      />
+                      <span class="checkmark op-red-2"></span>
+                    </label>
+                  </div>
+  
+                  <div class="radio-option">
+                    <label class="container-op">
+                      <input
+                        type="radio"
+                        checked="checked"
+                        name="color"
+                        value="#d32f2f"
+                      />
+                      <span class="checkmark op-red-3"></span>
+                    </label>
+                  </div>
+  
+                  <div class="radio-option">
+                    <label class="container-op">
+                      <input
+                        type="radio"
+                        checked="checked"
+                        name="color"
+                        value="#ad1457"
+                      />
+                      <span class="checkmark op-red-4"></span>
+                    </label>
+                  </div>
+  
+                  <div class="radio-option">
+                    <label class="container-op">
+                      <input
+                        type="radio"
+                        checked="checked"
+                        name="color"
+                        value="#ff6f00"
+                      />
+                      <span class="checkmark op-orange-1"></span>
+                    </label>
+                  </div>
+  
+                  <div class="radio-option">
+                    <label class="container-op">
+                      <input
+                        type="radio"
+                        checked="checked"
+                        name="color"
+                        value="#ffa000"
+                      />
+                      <span class="checkmark op-orange-2"></span>
+                    </label>
+                  </div>
+  
+                  <div class="radio-option">
+                    <label class="container-op">
+                      <input
+                        type="radio"
+                        checked="checked"
+                        name="color"
+                        value="#ab47bc"
+                      />
+                      <span class="checkmark op-purple-1"></span>
+                    </label>
+                  </div>
+  
+                  <div class="radio-option">
+                    <label class="container-op">
+                      <input
+                        type="radio"
+                        checked="checked"
+                        name="color"
+                        value="#ba68c8"
+                      />
+                      <span class="checkmark op-purple-2"></span>
+                    </label>
+                  </div>
+  
+                  <div class="radio-option">
+                    <label class="container-op">
+                      <input
+                        type="radio"
+                        checked="checked"
+                        name="color"
+                        value="#00897b"
+                      />
+                      <span class="checkmark op-green-1"></span>
+                    </label>
+                  </div>
+  
+                  <div class="radio-option">
+                    <label class="container-op">
+                      <input
+                        type="radio"
+                        checked="checked"
+                        name="color"
+                        value="#43a047"
+                      />
+                      <span class="checkmark op-green-2"></span>
+                    </label>
+                  </div>
+  
+                  <div class="radio-option">
+                    <label class="container-op">
+                      <input
+                        type="radio"
+                        checked="checked"
+                        name="color"
+                        value="#90a4ae"
+                      />
+                      <span class="checkmark op-gray-1"></span>
+                    </label>
+                  </div>
+  
+                  <div class="radio-option">
+                    <label class="container-op">
+                      <input
+                        type="radio"
+                        checked="checked"
+                        name="color"
+                        value="#607d8b"
+                      />
+                      <span class="checkmark op-gray-2"></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <div class="box-4">
+              <p class="input-tag">Account type</p>
+              <div class="type-picker">
+                <div class="type-select-box">
+                  <button class="type-btn-x-13" type="button" id="x-13"></button>
+                  <i class="fa-solid fa-caret-down fa-2xs" id="caret-down-long"></i>
+                </div>
+                <div class="type-options-12">
+                  <ul>
+                    <li value="General">
+                      <span class="type-icon-box">
+                        <svg class="type-acc-icon">
+                          <use href="./svg-sprite/symbol-defs.svg#icon-wallet-2"></use>
+                        </svg>
+                      </span>
+                      General
+                    </li>
+                    <li value="Cash">
+                      <span class="type-icon-box">
+                        <svg class="type-acc-icon">
+                          <use href="./svg-sprite/symbol-defs.svg#icon-dollar"></use>
+                        </svg>
+                      </span>
+                      Cash
+                    </li>
+                    <li value="Credit Card">
+                      <span class="type-icon-box">
+                        <svg class="type-acc-icon">
+                          <use href="./svg-sprite/symbol-defs.svg#icon-credit-card"></use>
+                        </svg>
+                      </span>
+                      Credit Card
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="box-1">
+              <div class="box-2">
+                <p class="input-tag">Starting Amount</p>
+                <input type="number" id="number-66" name="quantity" min="0" value="0"/>
+              </div>
+              <div class="box-3">
+                <p class="input-tag">Currency</p>
+  
+                <div class="currency-picker">
+                  <div class="currency-select-box">
+                    <button class="currency-btn-x-22" type="button" id="x-22">
+                      <div id="currency-id"></div>
+                    </button>
+                    <i class="fa-solid fa-caret-down fa-2xs" id="caret-down-short"></i>
+                  </div>
+                  <div class="currency-options-3">
+                    <ul>
+                      <li value="UAH">UAH</li>
+                      <li value="USD">USD</li>
+                      <li value="EUR">EUR</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="box-5">
+              <div class="switch-slider-box">
+                <label class="switch">
+                  <input type="checkbox" />
+                  <span class="slider round"></span>
+                </label>
+                <p>Exclude from statistics</p>
+                <div class="exclude-stat-info">
+                  <svg class="info-pop-up">
+                    <use href="./svg-sprite/symbol-defs.svg#icon-question"></use>
+                  </svg>
+                </div>
+              </div>
+  
+              <button type="submit" class="button-save">Save</button>
+            </div>
+          </form>
+        </div>
+        <!-- <input class="name-sum" type="number" name="quantity" id="start-sum" min="0" value="0" > -->
+      </div>
+    </div>
+
+    <section class="accounts">
+      <div class="container">
+        <ul class="accounts-list">
+          <li class="default-account">
+            <button type="button" class="button-account">
+              <span class="account-icon">
+                <svg class="icon-account-type">
+                  <use href="./svg-sprite/symbol-defs.svg#icon-dollar"></use>
+                </svg>
+              </span>
+              <span>
+                <p class="name-custom">Cash</p>
+                <h4 class="balance"><span>UAH </span><span>222.0</span></h4>
+              </span>
+            </button>
+            <button type="button" class="account-edit">
+              <svg class="icon-edit">
+                <use href="./svg-sprite/symbol-defs.svg#icon-pencil"></use>
+              </svg>
+            </button>
+          </li>
+          <li id="lastItemBtn">
+            <button type="button" class="add-account" data-modal-account-open>
+              + Add Account
+            </button>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section
+      class="statistics-section"
+      style="display: flex; flex-direction: column; align-items: center"
+    >
+      <div class="container-23">
+        <form>
+          <input
+            type="text"
+            name="text"
+            id="txt"
+            placeholder="Text input"
+            required
+          />
+          <button type="submit" class="btn-gpt-test">test</button>
+        </form>
+        <ul id="myList">
+          <li>Default</li>
+
+          <li id="lastItem">Add</li>
+        </ul>
+      </div>
+
+      <div>
+      </div>
+    </section>
+
+
+    
+
+    <script src="./js/color-picker-dropdown.js"></script>
+    <script src="./js/dropdown.js"></script>
+    <script src="./js/modal.js"></script>
+    <script src="./js/test-gpt.js"></script>
+    <script src="./js/account-modal.js"></script>
+    <script src="./js/account-multi-toggle.js"></script>
+    <script src="./js/form-saves.js"></script>
+    
+
+    <script src="./js/account-type-btn.js"></script>
+    <script src="./js/currency-btn.js"></script>
+
+    <script src="./complex-li-creation.js"></script>
+
+    <script src="https://kit.fontawesome.com/55ae9dab90.js" crossorigin="anonymous"></script>
+  </body>
+</html>
