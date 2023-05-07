@@ -120,11 +120,12 @@
             <h3>ADD ACCOUNT</h3>
           </div>
   
-          <form class="type-88">
+          <form class="type-88" action="{% url 'create_account' %}" method='POST'>
+            {% csrf_token %}
             <div class="box-1">
               <div class="box-2">
                 <p class="input-tag">Name</p>
-                <input type="name" id="name-99" placeholder="Account name" required/>
+                <input name="name" type="name" id="name-99" placeholder="Account name" required/>
               </div>
               <div class="box-3">
                 <p class="input-tag">Color</p>
@@ -383,9 +384,9 @@
                   </div>
                   <div class="currency-options-3">
                     <ul>
-                      <li value="UAH">UAH</li>
-                      <li value="USD">USD</li>
-                      <li value="EUR">EUR</li>
+                      {% for currency in currencies%}
+                      <li value="{{currency.code}}">{{currency.code}}</li>
+                      {% endfor %}
                     </ul>
                   </div>
                 </div>
@@ -395,7 +396,7 @@
             <div class="box-5">
               <div class="switch-slider-box">
                 <label class="switch">
-                  <input type="checkbox" />
+                  <input type="checkbox" name="exclude_from_stat"/>
                   <span class="slider round"></span>
                 </label>
                 <p>Exclude from statistics</p>
