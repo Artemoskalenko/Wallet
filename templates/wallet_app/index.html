@@ -337,6 +337,9 @@
                   <button class="type-btn-x-13" type="button" id="x-13"></button>
                   <i class="fa-solid fa-caret-down fa-2xs" id="caret-down-long"></i>
                 </div>
+
+                <input type="hidden" name="selectedType" id="type-input"/>
+                
                 <div class="type-options-12">
                   <ul>
                     <li value="General">
@@ -382,6 +385,9 @@
                     </button>
                     <i class="fa-solid fa-caret-down fa-2xs" id="caret-down-short"></i>
                   </div>
+
+                  <input type="hidden" name="selectedCurrency" id="currency-input"/>
+
                   <div class="currency-options-3">
                     <ul>
                       {% for currency in currencies%}
