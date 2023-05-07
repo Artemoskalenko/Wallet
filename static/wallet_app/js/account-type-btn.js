@@ -1,5 +1,6 @@
 const selectBtn = document.getElementById('x-13');
 const selectDropdown = document.querySelector('.type-options-12');
+const typeInput = document.getElementById("type-input");
 let selectedOption = '';
 
 // Set the selected option to the first option
@@ -23,6 +24,7 @@ selectDropdown.addEventListener('click', (event) => {
   const button = event.target.closest('li');
   if (button) {
     selectedOption = button.innerHTML;
+    typeInput.value = button.textContent;
     selectBtn.innerHTML = selectedOption;
     selectDropdown.classList.remove("show");
     selectBtn.classList.remove("show");

@@ -1,5 +1,6 @@
 const selectBtnCurrency = document.querySelector('.currency-btn-x-22');
 const selectDropdownCurrency = document.querySelector('.currency-options-3');
+const currencyInput = document.getElementById("currency-input");
 let selectedCurrencyOption = '';
 
 // Set the default selected currency option to the first option
@@ -24,6 +25,7 @@ selectDropdownCurrency.addEventListener('click', (event) => {
   const button = event.target.closest('li');
   if (button) {
     selectedCurrencyOption = button.textContent;
+    currencyInput.value = button.textContent;
     selectBtnCurrency.textContent = selectedCurrencyOption;
     selectDropdownCurrency.classList.remove("show");
     selectBtnCurrency.classList.remove("show");
