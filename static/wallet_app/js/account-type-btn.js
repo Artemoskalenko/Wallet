@@ -38,7 +38,7 @@ let selectedOption = '';
 
 // Set the selected option to the first option
 const firstOption = selectDropdown.querySelector('li');
-selectedOption = firstOption.textContent.trim();
+selectedOption = firstOption.textContent;
 selectBtn.innerHTML = selectedOption;
 
 selectBtn.addEventListener('click', () => {
@@ -56,10 +56,11 @@ document.addEventListener('click', (event) => {
 selectDropdown.addEventListener('click', (event) => {
   const button = event.target.closest('li');
   if (button) {
-    selectedOption = button.textContent.trim();
+    selectedOption = button.textContent;
     typeInput.value = selectedOption;
     selectBtn.innerHTML = selectedOption;
     selectDropdown.classList.remove("show");
     selectBtn.classList.remove("show");
   }
 });
+
