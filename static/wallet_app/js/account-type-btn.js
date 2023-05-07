@@ -24,7 +24,7 @@ selectDropdown.addEventListener('click', (event) => {
   const button = event.target.closest('li');
   if (button) {
     selectedOption = button.innerHTML;
-    typeInput.value = button.textContent;
+    typeInput.value = button.value;
     selectBtn.innerHTML = selectedOption;
     selectDropdown.classList.remove("show");
     selectBtn.classList.remove("show");
