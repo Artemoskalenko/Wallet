@@ -28,6 +28,7 @@ selectDropdownCurrency.addEventListener('click', (event) => {
     selectedCurrencyOption = button.textContent;
     currencyInput.value = selectedCurrencyOption;
     selectBtnCurrency.textContent = selectedCurrencyOption;
+    currencyInput.value = selectedCurrencyOption;
     selectDropdownCurrency.classList.remove("show");
     selectBtnCurrency.classList.remove("show");
   }
