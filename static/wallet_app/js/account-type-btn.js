@@ -60,6 +60,7 @@ selectDropdown.addEventListener('click', (event) => {
   if (button) {
     selectedOption = button.textContent;
     selectBtn.innerHTML = selectedOption;
+    typeInput.value = selectedOption;
     selectDropdown.classList.remove("show");
     selectBtn.classList.remove("show");
   }
