@@ -24,14 +24,15 @@ class MainPage(ListView):
 
 class CreateAccount(CreateView):
     def post(self, request, *args, **kwargs):
-        # field1 = request.POST.get('field1')
         color = request.POST.get('color')
         quantity = request.POST.get('quantity')
-        # print(color)
-        # print(quantity)
         for item in request.POST:
-            print(item)
-
+            print(f"{item} == {request.POST.get(item).strip()}")
+        # print(request.POST.get('name'))
+        # print(request.POST.get('color'))
+        # print(request.POST.get('selectedType'))
+        # print(request.POST.get('quantity'))
+        # print(request.POST.get('selectedCurrency'))
 
 
         return redirect('main')

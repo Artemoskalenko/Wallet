@@ -26,13 +26,13 @@
     <header class="header">
       <div class="container">
         <nav class="header-navigation">
-          <a class="logo" href="./index.html"
+          <a class="logo" href="{% url 'main' %}"
             ><svg class="svg-logo">
               <use href="{% static 'wallet_app/svg-sprite/symbol-defs.svg' %}#icon-wallet"></use></svg></a>
 
           <ul class="header-list">
             <li>
-              <a class="header-list-item current" href="./index.html"
+              <a class="header-list-item current" href="{% url 'main' %}"
                 >Dashbourd</a
               >
             </li>

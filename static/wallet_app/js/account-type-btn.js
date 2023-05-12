@@ -34,6 +34,7 @@
 const selectBtn = document.getElementById('x-13');
 const selectDropdown = document.querySelector('.type-options-12');
 const typeInput = document.getElementById("type-input");
+typeInput.value = 'General'
 let selectedOption = '';
 
 // Set the selected option to the first option
