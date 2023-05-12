@@ -6,6 +6,7 @@ let selectedCurrencyOption = '';
 // Set the default selected currency option to the first option
 selectedCurrencyOption = selectDropdownCurrency.querySelector('li').textContent;
 selectBtnCurrency.textContent = selectedCurrencyOption;
+currencyInput.value = selectedCurrencyOption;
 
 
 selectBtnCurrency.addEventListener('click', (event) => {
@@ -25,7 +26,6 @@ selectDropdownCurrency.addEventListener('click', (event) => {
   const button = event.target.closest('li');
   if (button) {
     selectedCurrencyOption = button.textContent;
-    currencyInput.value = selectedCurrencyOption;
     selectBtnCurrency.textContent = selectedCurrencyOption;
     selectDropdownCurrency.classList.remove("show");
     selectBtnCurrency.classList.remove("show");
