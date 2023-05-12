@@ -26,6 +26,7 @@ selectDropdownCurrency.addEventListener('click', (event) => {
   const button = event.target.closest('li');
   if (button) {
     selectedCurrencyOption = button.textContent;
+    currencyInput.value = selectedCurrencyOption;
     selectBtnCurrency.textContent = selectedCurrencyOption;
     selectDropdownCurrency.classList.remove("show");
     selectBtnCurrency.classList.remove("show");

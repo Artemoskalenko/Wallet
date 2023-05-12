@@ -24,16 +24,24 @@ class MainPage(ListView):
 
 class CreateAccount(CreateView):
     def post(self, request, *args, **kwargs):
+        name = request.POST.get('name')
         color = request.POST.get('color')
-        quantity = request.POST.get('quantity')
-        for item in request.POST:
-            print(f"{item} == {request.POST.get(item).strip()}")
-        # print(request.POST.get('name'))
-        # print(request.POST.get('color'))
-        # print(request.POST.get('selectedType'))
-        # print(request.POST.get('quantity'))
-        # print(request.POST.get('selectedCurrency'))
-
+        selected_type = request.POST.get('selectedType').strip()
+        quantity = float(request.POST.get('quantity'))
+        selected_currency = Currency.objects.get(code=request.POST.get('selectedCurrency'))
+        exclude_from_stat = True if request.POST.get('exclude_from_stat') else False
+        # for item in request.POST:
+        #     print(f"{item} == {request.POST.get(item).strip()}")
+        new_account = Wallet.objects.create(user=request.user, name=name, color=color, account_type=selected_type,
+                                            balance=quantity, currency=selected_currency,
+                                            exclude_from_statistic=exclude_from_stat)
+        new_account.save()
+        # print(name)
+        # print(color)
+        # print(selected_type)
+        # print(quantity)
+        # print(selected_currency)
+        # print(True if request.POST.get('exclude_from_stat') else False)
 
         return redirect('main')
 

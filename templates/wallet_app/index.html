@@ -358,13 +358,13 @@
                       </span>
                       Cash
                     </li>
-                    <li value="Credit Card">
+                    <li value="Credit card">
                       <span class="type-icon-box">
                         <svg class="type-acc-icon">
                           <use href="{% static 'wallet_app/svg-sprite/symbol-defs.svg' %}#icon-credit-card"></use>
                         </svg>
                       </span>
-                      Credit Card
+                      Credit card
                     </li>
                   </ul>
                 </div>
@@ -425,11 +425,17 @@
       <div class="container">
         <ul class="accounts-list">
           {% for wallet in object_list  %}
-          <li class="default-account">
+          <li class="default-account" style="background-color: {{ wallet.color }}">
             <button type="button" class="button-account">
               <span class="account-icon">
                 <svg class="icon-account-type">
+                  {% if wallet.account_type == "General" %}
+                  <use href="{% static 'wallet_app/svg-sprite/symbol-defs.svg' %}#icon-wallet"></use>
+                  {% elif wallet.account_type == "Cash" %}
                   <use href="{% static 'wallet_app/svg-sprite/symbol-defs.svg' %}#icon-dollar"></use>
+                  {% elif wallet.account_type == "Credit card" %}
+                  <use href="{% static 'wallet_app/svg-sprite/symbol-defs.svg' %}#icon-credit-card"></use>
+                  {% endif %}
                 </svg>
               </span>
               <span>

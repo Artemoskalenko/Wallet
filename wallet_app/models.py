@@ -19,10 +19,21 @@ class Currency(models.Model):
 
 
 class Wallet(models.Model):
+    GENERAL = "General"
+    CASH = "Cash"
+    CREDIT_CARD = "Credit card"
+    ACCOUNT_TYPE_CHOICES = (
+        (GENERAL, "General"),
+        (CASH, "Cash"),
+        (CREDIT_CARD, "Credit card"),
+    )
     user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name="user", on_delete=models.CASCADE)
     name = models.CharField(max_length=30)
     currency = models.ForeignKey(Currency, on_delete=models.CASCADE)
     balance = models.DecimalField(decimal_places=2, max_digits=30)
+    color = models.CharField(max_length=10)
+    account_type = models.CharField(max_length=20, choices=ACCOUNT_TYPE_CHOICES, default=GENERAL)
+    exclude_from_statistic = models.BooleanField(default=False)
 
     def __str__(self):
         return f"{self.name} - {self.balance} {self.currency}"
